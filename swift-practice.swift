@@ -22,11 +22,11 @@ let b = "a"
 
 switch b {
 case "c", "d" :
-   print("letter is c or d")
+    print("letter is c or d")
 case "a":
     print("letter is a")
 default:
-print("no match")}
+    print("no match")}
 
 
 var num = 0
@@ -41,13 +41,13 @@ var c = 1
 
 while c < 10{
     print("less than 10")
-       c += 1
+    c += 1
 }
 
 repeat {
-       print("less than 20")
-        c += 1
-
+    print("less than 20")
+    c += 1
+    
 } while c < 20
 
 
@@ -78,12 +78,17 @@ class Employee {
     var salary = 0
     var role = ""
     
+    init(name: String) {
+        //custom initializer if you want to create
+        self.name = name
+    }
+    
     func giveRaise(raise:Int){
         salary += raise
     }
 }
 
-let employ1:Employee = Employee()
+let employ1:Employee = Employee(name: "Tom")
 
 employ1.name = "Tom"
 employ1.role = "Director"
@@ -95,7 +100,7 @@ employ1.giveRaise(raise: 4000000)
 
 print(employ1.salary)
 
-let employ2 = Employee()
+let employ2 = Employee(name: "Jason")
 
 employ2.giveRaise(raise: 900000)
 
@@ -104,6 +109,18 @@ print(employ2.salary)
 
 class Manager:Employee {                    //Manager inherits Employee class
     var teamSize = 0
+    var bonus:Int {
+        // This is a computed property
+        // When it's accessed, the code in here will run
+        // Then we'll return the value
+        return teamSize * 1000
+    }
+    
+    init(name:String, team:Int){
+        super.init(name: name)
+        teamSize = team
+    }
+    
     
     override func giveRaise(raise: Int) {   // override Employee function
         super.giveRaise(raise: 99999)       // run original function first
@@ -111,10 +128,30 @@ class Manager:Employee {                    //Manager inherits Employee class
     }
 }
 
-var m = Manager()
+var m = Manager(name: "John", team: 1)
+print(m.bonus)
 
-m.name = "John"
+
 m.giveRaise(raise: 100)
-print(m.salary)
+print("bonus: \(m.bonus)" )
+
+
+var aa:Int? = nil
+var bb:String? = nil
+var cc:String?
+
+class XmasPresent {
+    
+    func surprise() -> Int {
+        return Int.random(in: 1...10)
+    }
+}
+
+let present:XmasPresent? = nil
+
+present?.surprise()
+
+
+
 
 
