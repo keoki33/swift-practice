@@ -61,12 +61,60 @@ testFunction()
 var num1 = 0
 
 
-func addNum() -> Int {
+
+func addNum(num1:Int, num2:Int) -> Int {
     let a = 1
     let b = 2
-    let c = a + b
+    let c = a + b + num1 + num2
     return c
 }
 
-let sum = addNum()
+let sum = addNum(num1: 5, num2: 6)
 print(sum)
+
+
+class Employee {
+    var name = ""
+    var salary = 0
+    var role = ""
+    
+    func giveRaise(raise:Int){
+        salary += raise
+    }
+}
+
+let employ1:Employee = Employee()
+
+employ1.name = "Tom"
+employ1.role = "Director"
+employ1.salary = 100000
+
+print(employ1.salary)
+
+employ1.giveRaise(raise: 4000000)
+
+print(employ1.salary)
+
+let employ2 = Employee()
+
+employ2.giveRaise(raise: 900000)
+
+print(employ2.salary)
+
+
+class Manager:Employee {                    //Manager inherits Employee class
+    var teamSize = 0
+    
+    override func giveRaise(raise: Int) {   // override Employee function
+        super.giveRaise(raise: 99999)       // run original function first
+        salary += raise
+    }
+}
+
+var m = Manager()
+
+m.name = "John"
+m.giveRaise(raise: 100)
+print(m.salary)
+
+
