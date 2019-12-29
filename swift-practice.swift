@@ -177,4 +177,28 @@ let a = Person()
 let b = Person(gender: "male", netWorth: 10000)
 
 
+import UIKit
+
+var arr = ["dog", "cat", "bird"]
+
+
+for item in arr {
+    print(item)
+   }
+
+for index in 0 ... arr.count-1 {
+    print("\(index+1) \(arr[index])" )
+}
+
+var arr1:[String] = []  // Empty string array
+var arr2 = [String]()   // Another way to make empty string array
+
+arr1.insert("Frog", at:0)
+arr1 += ["frog", "bear"]
+arr.remove(at:0)
+
+arr1.firstIndex(of: "bear")
+arr1.lastIndex(of: "frog")
+
+
 
