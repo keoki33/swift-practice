@@ -151,7 +151,30 @@ let present:XmasPresent? = nil
 
 present?.surprise()
 
+import UIKit
 
+var str = "Hello, playground"
+
+class Person {
+    
+    var name:String
+    var netWorth:Int?
+    var gender:String!
+    
+    init() {
+        name = "None"
+    }
+    
+    convenience init (gender:String, netWorth:Int) {
+        self.init()
+        self.gender = gender
+        self.netWorth = netWorth
+    }
+}
+
+let a = Person()
+
+let b = Person(gender: "male", netWorth: 10000)
 
 
 
