@@ -200,5 +200,17 @@ arr.remove(at:0)
 arr1.firstIndex(of: "bear")
 arr1.lastIndex(of: "frog")
 
+var dictionary = [String:String]()
+
+dictionary["SJD 293"] = "Red Ferrari"
+
+let myCar = dictionary["SJD 293"]) // get value or if none nil
+
+dictionary["SJD 293"] = nil // Remove value
+
+for (key, value) in dictionary {
+    // code here
+}
+
 
 
