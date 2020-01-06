@@ -239,3 +239,6 @@ func compute () {
 }
 
 compute()
+
+
+let secondsInAnHour:Int = 3600
