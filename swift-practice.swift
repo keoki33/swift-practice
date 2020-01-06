@@ -213,4 +213,29 @@ for (key, value) in dictionary {
 }
 
 
+var a = 5
+var b = 8
 
+
+var numbers = [45,73,195,53]
+
+var computedNumbers = [numbers[0] * numbers[1], numbers[1] * numbers[2], numbers[2] * numbers[3] ]
+
+print(computedNumbers)
+
+func compute () {
+  
+    var count = 0
+    var answer:[Int] =  []
+    for (index, value) in numbers.enumerated() {
+        answer.append(value * numbers[index + 1])
+    count += 1
+        if count == 3 {
+            break
+        }
+    }
+    
+    print(answer)
+}
+
+compute()
